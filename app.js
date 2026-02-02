@@ -74,7 +74,7 @@ app.post('/register', async (req, res) => {
     }
 });
 
-mongoose.connect("mongodb+srv://goyalanshuman4_db_user:CbRfdwfRf1mlZXqV@ansh.yze13yf.mongodb.net/?appName=ansh").then(() => {
+mongoose.connect(process.env.MONGODB_URI).then(() => {
     console.log('Connected to MongoDB')
     app.listen(3001, () => {
         console.log('Server is running on port 3001');
